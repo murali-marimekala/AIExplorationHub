@@ -471,6 +471,16 @@ body {
     background: var(--gray-200);
 }
 
+.btn-tertiary {
+    background: var(--secondary-color);
+    color: var(--white);
+}
+
+.btn-tertiary:hover {
+    background: #0891b2;
+    transform: translateY(-1px);
+}
+
 .btn-disabled {
     background: var(--gray-100);
     color: var(--gray-400);

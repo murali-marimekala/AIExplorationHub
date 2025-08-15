@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Fundamentals - AI Learning Hub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <span>AI Learning Hub</span>
+                </div>
+                <a href="../index.html" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Dashboard
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="module-header">
+                <h1><i class="fas fa-cogs"></i> ML Fundamentals</h1>
+                <p class="module-subtitle">Understand core machine learning concepts and methodologies</p>
+            </div>
+
+            <div class="coming-soon-card">
+                <div class="coming-soon-content">
+                    <i class="fas fa-rocket"></i>
+                    <h2>Coming Soon!</h2>
+                    <p>This module is currently under development. We're creating comprehensive, interactive content covering:</p>
+                    
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Machine learning algorithms overview</li>
+                        <li><i class="fas fa-check"></i> Model selection and evaluation</li>
+                        <li><i class="fas fa-check"></i> Cross-validation techniques</li>
+                        <li><i class="fas fa-check"></i> Bias-variance tradeoff</li>
+                        <li><i class="fas fa-check"></i> Performance metrics</li>
+                        <li><i class="fas fa-check"></i> ML workflow best practices</li>
+                    </ul>
+
+                    <div class="cta-section">
+                        <h3>In the meantime:</h3>
+                        <div class="cta-buttons">
+                            <a href="../index.html" class="btn btn-primary">
+                                <i class="fas fa-chart-line"></i>
+                                View Progress Dashboard
+                            </a>
+                            <a href="01-ai-fundamentals.html" class="btn btn-secondary">
+                                <i class="fas fa-play"></i>
+                                Start with AI Fundamentals
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="estimated-release">
+                        <i class="fas fa-calendar"></i>
+                        <span>Estimated Release: Coming Soon</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        .main {
+            padding: 2rem 0;
+            min-height: calc(100vh - 80px);
+        }
+
+        .module-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .module-header h1 {
+            font-size: 2.5rem;
+            color: var(--gray-800);
+            margin-bottom: 0.5rem;
+        }
+
+        .module-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+        }
+
+        .coming-soon-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+        }
+
+        .coming-soon-content {
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .coming-soon-content > i {
+            font-size: 4rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .coming-soon-content h2 {
+            font-size: 2rem;
+            color: var(--gray-800);
+            margin-bottom: 1rem;
+        }
+
+        .coming-soon-content > p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .feature-list {
+            list-style: none;
+            text-align: left;
+            max-width: 400px;
+            margin: 2rem auto;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 0;
+            color: var(--gray-700);
+        }
+
+        .feature-list i {
+            color: var(--success-color);
+        }
+
+        .cta-section {
+            margin: 2.5rem 0;
+            padding: 2rem;
+            background: var(--gray-50);
+            border-radius: var(--radius);
+        }
+
+        .cta-section h3 {
+            color: var(--gray-800);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .estimated-release {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: var(--gray-500);
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .coming-soon-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .module-header h1 {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</body>
+</html>

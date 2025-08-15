@@ -252,9 +252,13 @@ class AILearningHub {
                     actions.innerHTML = '<button class="btn btn-disabled" disabled>Complete Prerequisites</button>';
                 } else {
                     const moduleName = this.getModuleName(moduleId);
+                    const notebookFile = this.getNotebookFileName(moduleId);
                     actions.innerHTML = `
-                        <a href="notebooks/${moduleId}.html" class="btn btn-primary">Start Learning</a>
-                        <a href="https://colab.research.google.com/github/murali-marimekala/AIExplorationHub/blob/main/notebooks/${moduleId.replace('-', '_')}.ipynb" class="btn btn-secondary" target="_blank">
+                        <a href="notebooks/${notebookFile}" class="btn btn-primary">Start Learning</a>
+                        <a href="http://localhost:8888/notebooks/notebooks/${moduleId.replace('-', '_')}.ipynb" class="btn btn-secondary" target="_blank" title="Open in Jupyter Lab">
+                            <i class="fas fa-rocket"></i> Jupyter
+                        </a>
+                        <a href="https://colab.research.google.com/github/murali-marimekala/AIExplorationHub/blob/main/notebooks/${moduleId.replace('-', '_')}.ipynb" class="btn btn-tertiary" target="_blank" title="Open in Google Colab">
                             <i class="fab fa-google"></i> Colab
                         </a>
                     `;
@@ -656,6 +660,24 @@ class AILearningHub {
             'advanced-dl': 'Advanced Deep Learning'
         };
         return names[moduleId] || moduleId;
+    }
+
+    getNotebookFileName(moduleId) {
+        const fileNames = {
+            'ai-fundamentals': '01-ai-fundamentals.html',
+            'mathematics': 'mathematics-for-ai.html',
+            'programming': 'python-for-ai.html',
+            'data-handling': 'data-handling.html',
+            'ml-basics': 'ml-fundamentals.html',
+            'supervised-learning': 'supervised-learning.html',
+            'unsupervised-learning': 'unsupervised-learning.html',
+            'ml-projects': 'ml-projects.html',
+            'neural-networks': 'neural-networks.html',
+            'cnn': 'computer-vision.html',
+            'nlp': 'natural-language-processing.html',
+            'advanced-dl': 'advanced-deep-learning.html'
+        };
+        return fileNames[moduleId] || `${moduleId}.html`;
     }
 
     formatStatus(status) {
