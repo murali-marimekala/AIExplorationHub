@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Learning Hub - Your Journey to AI Expertise</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-brain"></i>
+                <span>AI Learning Hub</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#dashboard" class="nav-link">Dashboard</a></li>
+                <li><a href="#curriculum" class="nav-link">Curriculum</a></li>
+                <li><a href="#progress" class="nav-link">Progress</a></li>
+                <li><a href="#goals" class="nav-link">Goals</a></li>
+                <li><a href="#resources" class="nav-link">Resources</a></li>
+            </ul>
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Master Artificial Intelligence</h1>
+            <p>Your personalized journey from beginner to AI expert with interactive Google Colab notebooks, progress tracking, and goal management.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" id="totalModules">12</span>
+                    <span class="stat-label">Modules</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="completedModules">0</span>
+                    <span class="stat-label">Completed</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="progressPercentage">0%</span>
+                    <span class="stat-label">Progress</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="section">
+        <div class="container">
+            <h2>Learning Dashboard</h2>
+            
+            <!-- Progress Overview -->
+            <div class="dashboard-grid">
+                <div class="card progress-card">
+                    <h3>Overall Progress</h3>
+                    <div class="progress-circle">
+                        <svg viewBox="0 0 120 120">
+                            <circle cx="60" cy="60" r="50" fill="none" stroke="#e0e7ff" stroke-width="8"/>
+                            <circle cx="60" cy="60" r="50" fill="none" stroke="#4f46e5" stroke-width="8" 
+                                    stroke-dasharray="314" stroke-dashoffset="314" id="progressCircle"/>
+                        </svg>
+                        <div class="progress-text">
+                            <span id="dashboardProgress">0%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card streak-card">
+                    <h3>Learning Streak</h3>
+                    <div class="streak-display">
+                        <i class="fas fa-fire"></i>
+                        <span id="streakDays">0</span>
+                        <span>Days</span>
+                    </div>
+                </div>
+
+                <div class="card time-card">
+                    <h3>Time Spent</h3>
+                    <div class="time-display">
+                        <i class="fas fa-clock"></i>
+                        <span id="totalHours">0</span>
+                        <span>Hours</span>
+                    </div>
+                </div>
+
+                <div class="card next-card">
+                    <h3>Next Up</h3>
+                    <div class="next-topic">
+                        <i class="fas fa-play-circle"></i>
+                        <span id="nextTopic">AI Fundamentals</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="card activity-card">
+                <h3>Recent Activity</h3>
+                <div class="activity-list" id="activityList">
+                    <div class="activity-item">
+                        <i class="fas fa-book"></i>
+                        <span>Welcome to your AI learning journey!</span>
+                        <time>Today</time>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section id="curriculum" class="section">
+        <div class="container">
+            <h2>AI Curriculum</h2>
+            <p class="section-description">Comprehensive learning path from fundamentals to advanced AI applications</p>
+            
+            <div class="curriculum-phases">
+                <!-- Phase 1: Foundations -->
+                <div class="phase-card">
+                    <div class="phase-header">
+                        <h3>Phase 1: Foundations (Weeks 1-8)</h3>
+                        <div class="phase-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%" data-phase="1"></div>
+                            </div>
+                            <span class="progress-text">0/4 modules</span>
+                        </div>
+                    </div>
+                    
+                    <div class="modules-grid">
+                        <div class="module-card" data-module="ai-fundamentals">
+                            <div class="module-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h4>AI Fundamentals</h4>
+                            <p>History, types, and applications of AI</p>
+                            <div class="module-meta">
+                                <span class="duration">2 weeks</span>
+                                <span class="status not-started">Not Started</span>
+                            </div>
+                            <div class="module-actions">
+                                <a href="notebooks/01-ai-fundamentals.html" class="btn btn-primary">Start Learning</a>
+                                <a href="https://colab.research.google.com/github/murali-marimekala/AIExplorationHub/blob/main/notebooks/01_AI_Fundamentals.ipynb" class="btn btn-secondary" target="_blank">
+                                    <i class="fab fa-google"></i> Colab
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="module-card" data-module="mathematics">
+                            <div class="module-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <h4>Mathematics for AI</h4>
+                            <p>Linear algebra, calculus, statistics</p>
+                            <div class="module-meta">
+                                <span class="duration">2 weeks</span>
+                                <span class="status not-started">Not Started</span>
+                            </div>
+                            <div class="module-actions">
+                                <a href="notebooks/02-mathematics.html" class="btn btn-primary">Start Learning</a>
+                                <a href="https://colab.research.google.com/github/murali-marimekala/AIExplorationHub/blob/main/notebooks/02_Mathematics_for_AI.ipynb" class="btn btn-secondary" target="_blank">
+                                    <i class="fab fa-google"></i> Colab
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="module-card" data-module="programming">
+                            <div class="module-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h4>Python for AI</h4>
+                            <p>NumPy, Pandas, Matplotlib, Scikit-learn</p>
+                            <div class="module-meta">
+                                <span class="duration">2 weeks</span>
+                                <span class="status not-started">Not Started</span>
+                            </div>
+                            <div class="module-actions">
+                                <a href="notebooks/03-python-ai.html" class="btn btn-primary">Start Learning</a>
+                                <a href="https://colab.research.google.com/github/murali-marimekala/AIExplorationHub/blob/main/notebooks/03_Python_for_AI.ipynb" class="btn btn-secondary" target="_blank">
+                                    <i class="fab fa-google"></i> Colab
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="module-card" data-module="data-handling">
+                            <div class="module-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h4>Data Handling</h4>
+                            <p>Collection, cleaning, and preprocessing</p>
+                            <div class="module-meta">
+                                <span class="duration">2 weeks</span>
+                                <span class="status not-started">Not Started</span>
+                            </div>
+                            <div class="module-actions">
+                                <a href="notebooks/04-data-handling.html" class="btn btn-primary">Start Learning</a>
+                                <a href="https://colab.research.google.com/github/murali-marimekala/AIExplorationHub/blob/main/notebooks/04_Data_Handling.ipynb" class="btn btn-secondary" target="_blank">
+                                    <i class="fab fa-google"></i> Colab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 2: Machine Learning -->
+                <div class="phase-card">
+                    <div class="phase-header">
+                        <h3>Phase 2: Machine Learning (Weeks 9-16)</h3>
+                        <div class="phase-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%" data-phase="2"></div>
+                            </div>
+                            <span class="progress-text">0/4 modules</span>
+                        </div>
+                    </div>
+                    
+                    <div class="modules-grid">
+                        <div class="module-card" data-module="ml-basics">
+                            <div class="module-icon">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <h4>ML Fundamentals</h4>
+                            <p>Algorithms, model selection, evaluation</p>
+                            <div class="module-meta">
+                                <span class="duration">2 weeks</span>
+                                <span class="status locked">Locked</span>
+                            </div>
+                            <div class="module-actions">
+                                <button class="btn btn-disabled" disabled>Complete Prerequisites</button>
+                            </div>
+                        </div>
+
+                        <div class="module-card" data-module="supervised-learning">
+                            <div class="module-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>Supervised Learning</h4>
+                            <p>Regression, classification, ensemble methods</p>
+                            <div class="module-meta">
+                                <span class="duration">2 weeks</span>
+                                <span class="status locked">Locked</span>
+                            </div>
+                            <div class="module-actions">
+                                <button class="btn btn-disabled" disabled>Complete Prerequisites</button>
+                            </div>
+                        </div>
+
+                        <div class="module-card" data-module="unsupervised-learning">
+                            <div class="module-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <h4>Unsupervised Learning</h4>
+                            <p>Clustering, dimensionality reduction</p>
+                            <div class="module-meta">
+                                <span class="duration">2 weeks</span>
+                                <span class="status locked">Locked</span>
+                            </div>
+                            <div class="module-actions">
+                                <button class="btn btn-disabled" disabled>Complete Prerequisites</button>
+                            </div>
+                        </div>
+
+                        <div class="module-card" data-module="ml-projects">
+                            <div class="module-icon">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <h4>ML Projects</h4>
+                            <p>End-to-end machine learning projects</p>
+                            <div class="module-meta">
+                                <span class="duration">2 weeks</span>
+                                <span class="status locked">Locked</span>
+                            </div>
+                            <div class="module-actions">
+                                <button class="btn btn-disabled" disabled>Complete Prerequisites</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 3: Deep Learning -->
+                <div class="phase-card">
+                    <div class="phase-header">
+                        <h3>Phase 3: Deep Learning (Weeks 17-24)</h3>
+                        <div class="phase-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%" data-phase="3"></div>
+                            </div>
+                            <span class="progress-text">0/4 modules</span>
+                        </div>
+                    </div>
+                    
+                    <div class="modules-grid">
+                        <div class="module-card" data-module="neural-networks">
+                            <div class="module-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <h4>Neural Networks</h4>
+                            <p>Fundamentals, backpropagation, optimization</p>
+                            <div class="module-meta">
+                                <span class="duration">2 weeks</span>
+                                <span class="status locked">Locked</span>
+                            </div>
+                            <div class="module-actions">
+                                <button class="btn btn-disabled" disabled>Complete Prerequisites</button>
+                            </div>
+                        </div>
+
+                        <div class="module-card" data-module="cnn">
+                            <div class="module-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h4>Computer Vision</h4>
+                            <p>CNNs, image processing, object detection</p>
+                            <div class="module-meta">
+                                <span class="duration">2 weeks</span>
+                                <span class="status locked">Locked</span>
+                            </div>
+                            <div class="module-actions">
+                                <button class="btn btn-disabled" disabled>Complete Prerequisites</button>
+                            </div>
+                        </div>
+
+                        <div class="module-card" data-module="nlp">
+                            <div class="module-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h4>Natural Language Processing</h4>
+                            <p>RNNs, transformers, language models</p>
+                            <div class="module-meta">
+                                <span class="duration">2 weeks</span>
+                                <span class="status locked">Locked</span>
+                            </div>
+                            <div class="module-actions">
+                                <button class="btn btn-disabled" disabled>Complete Prerequisites</button>
+                            </div>
+                        </div>
+
+                        <div class="module-card" data-module="advanced-dl">
+                            <div class="module-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h4>Advanced Deep Learning</h4>
+                            <p>GANs, reinforcement learning, transfer learning</p>
+                            <div class="module-meta">
+                                <span class="duration">2 weeks</span>
+                                <span class="status locked">Locked</span>
+                            </div>
+                            <div class="module-actions">
+                                <button class="btn btn-disabled" disabled>Complete Prerequisites</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Section -->
+    <section id="progress" class="section">
+        <div class="container">
+            <h2>Progress Tracking</h2>
+            
+            <div class="progress-grid">
+                <div class="card">
+                    <h3>Weekly Progress</h3>
+                    <canvas id="weeklyChart"></canvas>
+                </div>
+                
+                <div class="card">
+                    <h3>Module Completion</h3>
+                    <canvas id="moduleChart"></canvas>
+                </div>
+                
+                <div class="card">
+                    <h3>Study Time</h3>
+                    <canvas id="timeChart"></canvas>
+                </div>
+                
+                <div class="card achievements-card">
+                    <h3>Achievements</h3>
+                    <div class="achievements-grid" id="achievementsList">
+                        <div class="achievement locked">
+                            <i class="fas fa-trophy"></i>
+                            <span>First Module</span>
+                        </div>
+                        <div class="achievement locked">
+                            <i class="fas fa-fire"></i>
+                            <span>7-Day Streak</span>
+                        </div>
+                        <div class="achievement locked">
+                            <i class="fas fa-clock"></i>
+                            <span>100 Hours</span>
+                        </div>
+                        <div class="achievement locked">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>AI Expert</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Goals Section -->
+    <section id="goals" class="section">
+        <div class="container">
+            <h2>Goals & Reminders</h2>
+            
+            <div class="goals-grid">
+                <div class="card">
+                    <h3>Set Learning Goals</h3>
+                    <form id="goalForm">
+                        <div class="form-group">
+                            <label for="goalTitle">Goal Title</label>
+                            <input type="text" id="goalTitle" placeholder="e.g., Complete Neural Networks module">
+                        </div>
+                        <div class="form-group">
+                            <label for="goalDeadline">Target Date</label>
+                            <input type="date" id="goalDeadline">
+                        </div>
+                        <div class="form-group">
+                            <label for="goalPriority">Priority</label>
+                            <select id="goalPriority">
+                                <option value="high">High</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="low">Low</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Goal</button>
+                    </form>
+                </div>
+                
+                <div class="card">
+                    <h3>Active Goals</h3>
+                    <div class="goals-list" id="goalsList">
+                        <div class="goal-item">
+                            <div class="goal-content">
+                                <h4>Master AI Fundamentals</h4>
+                                <p>Complete the first phase of the curriculum</p>
+                                <div class="goal-meta">
+                                    <span class="priority high">High Priority</span>
+                                    <span class="deadline">Due: Sep 15, 2025</span>
+                                </div>
+                            </div>
+                            <div class="goal-actions">
+                                <button class="btn-icon" onclick="completeGoal(this)">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                                <button class="btn-icon" onclick="deleteGoal(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Study Reminders</h3>
+                    <form id="reminderForm">
+                        <div class="form-group">
+                            <label for="reminderTime">Daily Study Time</label>
+                            <input type="time" id="reminderTime" value="19:00">
+                        </div>
+                        <div class="form-group">
+                            <label for="reminderDays">Days</label>
+                            <div class="days-selector">
+                                <label><input type="checkbox" value="monday" checked> Mon</label>
+                                <label><input type="checkbox" value="tuesday" checked> Tue</label>
+                                <label><input type="checkbox" value="wednesday" checked> Wed</label>
+                                <label><input type="checkbox" value="thursday" checked> Thu</label>
+                                <label><input type="checkbox" value="friday" checked> Fri</label>
+                                <label><input type="checkbox" value="saturday"> Sat</label>
+                                <label><input type="checkbox" value="sunday"> Sun</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Set Reminder</button>
+                    </form>
+                </div>
+                
+                <div class="card">
+                    <h3>Study Schedule</h3>
+                    <div class="schedule-calendar" id="studyCalendar">
+                        <!-- Calendar will be generated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="section">
+        <div class="container">
+            <h2>Learning Resources</h2>
+            
+            <div class="resources-grid">
+                <div class="resource-category">
+                    <h3>Books & References</h3>
+                    <div class="resource-list">
+                        <a href="#" class="resource-item">
+                            <i class="fas fa-book"></i>
+                            <div>
+                                <h4>Hands-On Machine Learning</h4>
+                                <p>Aurélien Géron</p>
+                            </div>
+                        </a>
+                        <a href="#" class="resource-item">
+                            <i class="fas fa-book"></i>
+                            <div>
+                                <h4>Deep Learning</h4>
+                                <p>Ian Goodfellow, Yoshua Bengio</p>
+                            </div>
+                        </a>
+                        <a href="#" class="resource-item">
+                            <i class="fas fa-book"></i>
+                            <div>
+                                <h4>Pattern Recognition and Machine Learning</h4>
+                                <p>Christopher Bishop</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="resource-category">
+                    <h3>Online Courses</h3>
+                    <div class="resource-list">
+                        <a href="#" class="resource-item">
+                            <i class="fas fa-play-circle"></i>
+                            <div>
+                                <h4>CS229: Machine Learning</h4>
+                                <p>Stanford University</p>
+                            </div>
+                        </a>
+                        <a href="#" class="resource-item">
+                            <i class="fas fa-play-circle"></i>
+                            <div>
+                                <h4>Deep Learning Specialization</h4>
+                                <p>Coursera - Andrew Ng</p>
+                            </div>
+                        </a>
+                        <a href="#" class="resource-item">
+                            <i class="fas fa-play-circle"></i>
+                            <div>
+                                <h4>Fast.ai Practical Deep Learning</h4>
+                                <p>Jeremy Howard</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="resource-category">
+                    <h3>Tools & Datasets</h3>
+                    <div class="resource-list">
+                        <a href="https://kaggle.com" class="resource-item" target="_blank">
+                            <i class="fas fa-database"></i>
+                            <div>
+                                <h4>Kaggle</h4>
+                                <p>Datasets and competitions</p>
+                            </div>
+                        </a>
+                        <a href="https://paperswithcode.com" class="resource-item" target="_blank">
+                            <i class="fas fa-file-alt"></i>
+                            <div>
+                                <h4>Papers with Code</h4>
+                                <p>Latest research papers and implementations</p>
+                            </div>
+                        </a>
+                        <a href="https://huggingface.co" class="resource-item" target="_blank">
+                            <i class="fas fa-robot"></i>
+                            <div>
+                                <h4>Hugging Face</h4>
+                                <p>Pre-trained models and datasets</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="resource-category">
+                    <h3>Communities</h3>
+                    <div class="resource-list">
+                        <a href="#" class="resource-item">
+                            <i class="fab fa-reddit"></i>
+                            <div>
+                                <h4>r/MachineLearning</h4>
+                                <p>Reddit community</p>
+                            </div>
+                        </a>
+                        <a href="#" class="resource-item">
+                            <i class="fab fa-discord"></i>
+                            <div>
+                                <h4>AI/ML Discord</h4>
+                                <p>Real-time discussions</p>
+                            </div>
+                        </a>
+                        <a href="#" class="resource-item">
+                            <i class="fab fa-stack-overflow"></i>
+                            <div>
+                                <h4>Stack Overflow</h4>
+                                <p>Technical Q&A</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 AI Learning Hub. Your journey to AI expertise starts here.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
