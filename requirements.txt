@@ -1,0 +1,22 @@
+# AI Learning Hub - Required Python Packages
+# Core data science and visualization packages
+numpy>=1.21.0
+pandas>=1.3.0
+matplotlib>=3.5.0
+plotly>=5.0.0
+ipywidgets>=8.0.0
+
+# Jupyter environment
+jupyter>=1.0.0
+jupyterlab>=4.0.0
+notebook>=7.0.0
+ipykernel>=6.0.0
+
+# Additional useful packages for AI learning
+seaborn>=0.11.0
+scikit-learn>=1.0.0
+scipy>=1.7.0
+
+# Optional packages for enhanced functionality
+nbconvert>=7.0.0
+ipython>=8.0.0

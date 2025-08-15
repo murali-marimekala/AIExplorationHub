@@ -1,6 +1,6 @@
 # 🧠 AI Learning Hub - Your Journey to AI Expertise
 
-A comprehensive, interactive web-based learning platform for mastering Artificial Intelligence from fundamentals to advanced applications. This platform combines Google Colab notebooks with a dynamic dashboard for tracking progress, setting goals, and maintaining learning momentum.
+A comprehensive, interactive web-based learning platform for mastering Artificial Intelligence from fundamentals to advanced applications. This platform combines interactive Jupyter notebooks with a dynamic dashboard for tracking progress, setting goals, and maintaining learning momentum.
 
 ## 🌟 Features
 
@@ -34,26 +34,230 @@ A comprehensive, interactive web-based learning platform for mastering Artificia
 - **Time Investment Analysis**: Track hours spent on different topics
 - **Learning Velocity**: Monitor your pace and adjust accordingly
 
-### 🔗 Google Colab Integration
-- **One-Click Access**: Direct links to interactive Jupyter notebooks
-- **Cloud-Based Learning**: No local setup required
+### 🔗 Jupyter Notebook Integration
+- **Local Jupyter Lab**: Run interactive notebooks on your machine
 - **Rich Visualizations**: Interactive charts, graphs, and animations
 - **Executable Code**: Run and modify code examples in real-time
+- **No Internet Required**: Learn offline once setup is complete
 
-## 🚀 Getting Started
+## ⚡ Quick Start (Automated Setup)
 
-### 1. Open the Platform
-Navigate to `index.html` in your browser or serve it locally:
+We've made it super easy to get started! Just run our setup script:
 
+### For macOS/Linux:
 ```bash
-# Option 1: Simple HTTP server
+git clone https://github.com/murali-marimekala/AIExplorationHub.git
+cd AIExplorationHub
+chmod +x quick_start.sh
+./quick_start.sh
+```
+
+### For Windows:
+```bash
+git clone https://github.com/murali-marimekala/AIExplorationHub.git
+cd AIExplorationHub
+python setup.py
+```
+
+The setup script will automatically:
+- ✅ Create a Python virtual environment
+- ✅ Install Jupyter Lab and all required packages
+- ✅ Start the web dashboard
+- ✅ Launch Jupyter Lab for notebooks
+- ✅ Open everything in your browser
+
+## 🚀 Manual Setup (Alternative)
+
+If you prefer manual setup or the automated script doesn't work:
+
+### 1. Clone and Navigate
+```bash
+git clone https://github.com/murali-marimekala/AIExplorationHub.git
+cd AIExplorationHub
+```
+
+### 2. Set Up Python Environment
+```bash
+# Create virtual environment
+python3 -m venv ai_env
+
+# Activate virtual environment
+# On macOS/Linux:
+source ai_env/bin/activate
+# On Windows:
+ai_env\Scripts\activate
+
+# Install required packages
+pip install -r requirements.txt
+```
+
+### 3. Start the Platform
+```bash
+# Start Jupyter Lab (in another terminal)
+source ai_env/bin/activate  # Activate environment first
+jupyter lab --no-browser --port=8888
+```
+
+### 4. Open Your Learning Platform
+- **Web Dashboard**: http://localhost:8000
+- **Jupyter Lab**: http://localhost:8888
+
+## 🔧 Troubleshooting Guide
+
+### Common Issues & Solutions
+
+#### ❌ "jupyter: command not found"
+**Cause**: Jupyter is not installed or virtual environment not activated
+
+**Solutions**:
+```bash
+# Option 1: Use automated setup
+./quick_start.sh  # macOS/Linux
+# OR
+quick_start.bat   # Windows
+
+# Option 2: Manual fix
+source ai_env/bin/activate  # Activate environment
+pip install jupyter jupyterlab
+
+# Option 3: System-wide install (macOS with Homebrew)
+brew install jupyter
+```
+
+#### ❌ "ModuleNotFoundError: No module named 'matplotlib'"
+**Cause**: Required packages not installed in the active environment
+
+**Solutions**:
+```bash
+# Make sure virtual environment is activated
+source ai_env/bin/activate  # macOS/Linux
+# OR
+ai_env\Scripts\activate     # Windows
+
+# Install all required packages
+pip install -r requirements.txt
+
+# Or install individual packages
+pip install matplotlib pandas numpy plotly ipywidgets
+```
+
+#### ❌ "externally-managed-environment" error
+**Cause**: System Python is protected (common on macOS/Linux)
+
+**Solutions**:
+```bash
+# Always use virtual environment (recommended)
+python3 -m venv ai_env
+source ai_env/bin/activate
+pip install -r requirements.txt
+
+# Or use --user flag (not recommended)
+pip install --user -r requirements.txt
+
+# macOS users can use Homebrew
+brew install jupyter
+```
+
+#### ❌ Jupyter Lab won't start or exits immediately
+**Cause**: Port conflict, permission issues, or corrupted installation
+
+**Solutions**:
+```bash
+# Try different port
+jupyter lab --port=8889
+
+# Clear Jupyter cache
+jupyter lab clean
+
+# Reinstall Jupyter
+pip uninstall jupyter jupyterlab
+pip install jupyter jupyterlab
+
+# Check for port conflicts
+lsof -i :8888  # See what's using port 8888
+```
+
+#### ❌ Visualizations not showing in notebooks
+**Cause**: Widget extensions not installed or enabled
+
+**Solutions**:
+```bash
+# Install widget extension
+pip install ipywidgets
+jupyter labextension install @jupyter-widgets/jupyterlab-manager
+
+# For older Jupyter Lab versions
+jupyter nbextension enable --py widgetsnbextension
+
+# Restart Jupyter Lab after installation
+```
+
+#### ❌ Web dashboard not loading (localhost:8000)
+**Cause**: HTTP server not running or port conflict
+
+**Solutions**:
+```bash
+# Start HTTP server manually
 python -m http.server 8000
 
-# Option 2: Using Node.js
-npx serve .
+# Try different port if 8000 is busy
+python -m http.server 8001
 
-# Option 3: Open directly in browser
-open index.html
+# Alternative servers
+npx serve .  # If you have Node.js
+php -S localhost:8000  # If you have PHP
+```
+
+#### ❌ Permission denied errors
+**Cause**: Insufficient permissions to create files/directories
+
+**Solutions**:
+```bash
+# macOS/Linux - fix permissions
+chmod +x quick_start.sh
+
+# Windows - run as administrator
+# Right-click Command Prompt → "Run as Administrator"
+
+# Use user directory for virtual environment
+python3 -m venv ~/ai_env
+source ~/ai_env/bin/activate
+```
+
+#### ❌ Git clone fails
+**Cause**: Network issues or authentication problems
+
+**Solutions**:
+```bash
+# Use HTTPS instead of SSH
+git clone https://github.com/murali-marimekala/AIExplorationHub.git
+
+# Or download ZIP file
+# Go to GitHub repo → Click "Code" → "Download ZIP"
+```
+
+### 🆘 Still Having Issues?
+
+1. **Run the environment test**: Open the first notebook cell that tests your setup
+2. **Check the GitHub Issues**: Look for similar problems and solutions
+3. **Create a new issue**: Include:
+   - Operating system and version
+   - Python version (`python --version`)
+   - Error messages (full text)
+   - Steps you tried
+   - Output of `pip list` command
+
+### 📱 Platform Testing
+
+Test your setup by verifying:
+- ✅ Web dashboard loads at http://localhost:8000
+- ✅ Jupyter Lab opens at http://localhost:8888
+- ✅ First notebook cell runs without errors
+- ✅ Interactive visualizations display correctly
+- ✅ Quiz functionality works
+- ✅ Progress tracking updates
+
+## 🚀 Getting Started
 ```
 
 ### 2. Explore the Dashboard
